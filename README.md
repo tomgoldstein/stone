@@ -23,7 +23,7 @@ Once you have the `order` struct, you can use it to map images into vectors.  A 
 ```
 
 To reverse this transform, one simply does this...
-```
+```matlab
 >> untransformed = STO(transformed);          % The stone transform is self-adjoint, so it's its own inverse
 >> image = nestedVectorToImage(untransformed, order); % Map the 1D vector of pixels back into a 2D image array
 ```
