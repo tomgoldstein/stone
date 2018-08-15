@@ -16,14 +16,15 @@ This will create a struct called `order` that contrains information about the or
 
 Once you have the `order` struct, you can use it to map images into vectors.  A stone transform on an image would look like this...  
 ```
->> order = createOrderingData(256,'full')  
->> vec = imageToNestedVector(<image>, order)  
->> transformed = STO(vec)  
+>> image = phantom(256);                      % Create 256x256 synthetic image . 
+>> order = createOrderingData(256,'full');    % Create a struct with information on how to map image into vector  
+>> vec = imageToNestedVector(image, order);   % Map the image into a vector using the specified pixel ordering    
+>> transformed = STO(vec);                    % Apply the stone transform to the vector
 ```
 
 To reverse this transform, one simply does this...
 ```
->> untransformed = STO(transformed)  
->> image = nestedVectorToImage(untransformed, order)
+>> untransformed = STO(transformed);          % The stone transform is self-adjoint, so it's its own inverse
+>> image = nestedVectorToImage(untransformed, order); % Map the 1D vector of pixels back into a 2D image array
 ```
 Note this works because the stone transform is unitary.
