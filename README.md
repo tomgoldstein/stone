@@ -15,7 +15,7 @@ or
 This will create a struct called `order` that contrains information about the order in which image pixels should get mapped into a vector, assuming a 256x256 image size.  The 'semi' options creates a more regular emebedding patters that produces smoother previews, while the 'full' option creates a highly random embedding that is a little better for compessed sensing, but creates more noisy previews.
 
 Once you have the `order` struct, you can use it to map images into vectors.  A stone transform on an image would look like this...  
-```
+```matlab
 >> image = phantom(256);                      % Create 256x256 synthetic image . 
 >> order = createOrderingData(256,'full');    % Create a struct with information on how to map image into vector  
 >> vec = imageToNestedVector(image, order);   % Map the image into a vector using the specified pixel ordering    
