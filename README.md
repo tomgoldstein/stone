@@ -17,8 +17,8 @@ This will create a struct called `order` that contrains information about the or
 Once you have the `order` struct, you can use it to map images into vectors.  A stone transform on an image would look like this...  
 '''
 >> order = createOrderingData(256,'full')  
->> vec = imageToNestedVector(<image>, order)
->> transformed = STO(vec)
+>> vec = imageToNestedVector(<image>, order)  
+>> transformed = STO(vec)  
 '''
 
 To reverse this transform, one simply does this...
