@@ -1,0 +1,64 @@
+#pdf file
+iclr2018_conference.pdf
+nips_2017.pdf
+icml.pdf
+icml2018.pdf
+nips_2018.pdf
+
+## Generic
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+.localized
+.metadata
+*.zip
+*.pptx
+
+## Data
+*.obj
+
+## Python
+*.pyc
+.idea
+
+## Java
+*.class
+.project
+.classpath
+.settings
+.externalToolBuilders
+
+## Torch data files
+*.t7
+
+## latex
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtcl
+*.out
+*.synctex.gz
+*.fdb_latexmk
+
+#atom
+*.fls
+
