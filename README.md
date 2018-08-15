@@ -3,4 +3,4 @@ This repository implements the stone transform, and accompanying demos, for comp
 https://arxiv.org/abs/1311.3405
 
 
-To get started, run the `setupSTO.m` script.  Then, run a demo script like `testImagereconstruction.m`.
+To get started, run the `setupSTO.m` script.  Then, run a demo script like `testImagereconstruction.m` or `reconstructPendCar.m`.
