@@ -1,4 +1,4 @@
-%  This script loads different DMD datasets, and calls the reconstruction
+ %  This script loads different DMD datasets, and calls the reconstruction
 %  method.  Results are saved in the 'DMD_reconstructions' folder.
 
 

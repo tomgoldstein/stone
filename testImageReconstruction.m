@@ -16,16 +16,15 @@ N = n*n; % number of pixels
 order = createOrderingData(n,'full'); % create the ordering to map into a vector 
 
 
-   %% Create STO transform data
+%% Create STO transform data
 vec = imageToNestedVector(image, order); % vectorize the image
 vec = STO(vec);       % transform it
 rowsToSample = order.samplingOrder(1:numberOfSamples);
 
-    % Record compressive measurements
+% Record compressive measurements
 b = zeros(N,1);
 b(rowsToSample) = vec(rowsToSample);
 b(rowsToSample) = b(rowsToSample)+randn(numberOfSamples,1)*sigma/max(b); % add noise
-
 
 % create row selector matrix
 R = zeros(N,1);
