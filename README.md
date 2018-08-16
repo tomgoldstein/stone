@@ -3,7 +3,14 @@ This repository implements the stone transform, and accompanying demos, for comp
 https://arxiv.org/abs/1311.3405
 
 
-To get started, run the `setupSTO.m` script.  Then, run a demo script like `testImagereconstruction.m` or `reconstructPendCar.m`.
+To get started, run the `setupSTO.m` script.  Then, run a demo script like one of these...
+
+- `testImageReconstruction.m`: compressed-sensing recovery of a synthetic image using TV prior  
+- `reconstructPendCar.m`: compressed-sensing recovery of "PendCar" video frames 
+- `testPreview.m`: create preview images from synthetic datasets using a direct method with no optimization
+- `reconstructDMDVideosFromDatasets.m`:  recovery of videos from real emprical DMD measurements
+
+
 
 # Some notes
 The stone transform is implemented as a simple linear operator that acts on vectors with power-of-four length.  The transform itself is implemented in the compileable mex file `STO_fast.c`, and will need to be compiled before use.  This compilation should hopefully happen automatically with you call `setupSTO.m`.
