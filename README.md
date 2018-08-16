@@ -34,4 +34,4 @@ To reverse this transform, one simply does this...
 >> untransformed = STO(transformed);          % The stone transform is self-adjoint, so it's its own inverse
 >> image = nestedVectorToImage(untransformed, order); % Map the 1D vector of pixels back into a 2D image array
 ```
-Note this works because the stone transform is unitary.
+Note this works because the stone transform is unitary.  Therefore, the inverse stone transform is the same as the foreward stone tranform.
