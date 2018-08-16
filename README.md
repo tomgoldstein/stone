@@ -1,6 +1,6 @@
 # Overview
-This repository implements the stone transform, and accompanying demos, for compressive sensing and reconstruction of video.  The implementation is in Matlab, with compilable C-langauge "mex" components.  The STOne transform and its applications are described here.
-https://arxiv.org/abs/1311.3405
+This repository implements the stone transform, and accompanying demos, for compressive sensing and reconstruction of video.  The implementation is in Matlab, with compilable C-langauge "mex" components.  The STOne transform and its applications are described here:
+https://arxiv.org/abs/1311.3405.
 
 
 To get started, run the `setupSTO.m` script.  Then, run a demo script like one of these...
