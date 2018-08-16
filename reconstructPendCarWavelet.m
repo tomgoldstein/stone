@@ -1,5 +1,6 @@
 %  This script creates a stream of Stone measurements from the PendCar
-%  high-speed camera dataset, and then reconstructs it.
+%  high-speed camera dataset, and then reconstructs it using a wavelet
+%  sparsity prior.
 
 %%  Parameters that control reconstruction : chosen by user
 Nr = 256;  % DMD resolution
@@ -15,6 +16,9 @@ regularizer = 'wavelets2';
 solver = 'fasta'; 
 %solver = 'cosamp'; 
 
+if ~exist('fasta')
+    error('This reconstruction method requires FASTA.  Obtain FASTA, and add fasta.m to your path.')
+end
 
 order = createOrderingData(Nr,'full'); % choose either 'full' random, or 'semi' random
 
@@ -179,12 +183,14 @@ big = max(frames(:));
 frames = (frames-small)*255/(big-small);
 
 %%  Write the results to an animated gif file
+if ~exist('reconstructions')
+    mkdir('reconstructions')
+end
 
-
-filename = ['DMD_reconstructions/pendcar/waveletfbf_Nr_',num2str(Nr) ,'_Nd_' ,num2str(length(data)) ,'_Ndf_', num2str(dataPerFrame),'_shift_',num2str(shiftPerFrame),'_Nf_',num2str(Nf), '_mu_',num2str(mu) ];
+filename = ['reconstructions/pendcar_waveletfbf_Nr_',num2str(Nr) ,'_Nd_' ,num2str(length(data)) ,'_Ndf_', num2str(dataPerFrame),'_shift_',num2str(shiftPerFrame),'_Nf_',num2str(Nf), '_mu_',num2str(mu) ];
 imdata = permute(frames,[1 2 4 3]);
 imwrite(imdata,[filename '.gif'],'DelayTime',0,'LoopCount',inf);
 
-imwrite(frames(:,:,end/2)/256,['DMD_reconstructions/pendcar/wavelet_sample_frame.png'],'mode','lossless');
+imwrite(frames(:,:,end/2)/256,['reconstructions/pendcar_wavelet_sample_frame.png'],'mode','lossless');
 
 save([filename '.mat'],'frames');
